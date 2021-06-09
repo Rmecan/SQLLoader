@@ -1,0 +1,48 @@
+1.Step1(Tebles.txt作成)
+  SQLLoader\tmp\Tebles.txtを生成します。
+  他の処理の中にはTebles.txtがないと実行できないものもあります。
+
+2.Step2(*.CTL作成)
+  SQLLoader\dat\に制御ファイル(*.CTL)を生成します。
+  Tebles.txtがないと実行できません。
+
+3.Step3(*.DAT作成)
+  SQLLoader\dat\にデータファイル(*.DAT)を生成します。
+  Tebles.txtがないと実行できません。
+
+4.Step4(LOADER実行)
+  SQLLDR.EXEを実行します。
+  SQLLDR.EXEを実行時に対象テーブルがTRUNCATEされます。
+  Tebles.txtがないと実行できません。
+  制御ファイル(*.CTL)がないと実行できません。
+  データファイル(*.DAT)がないと実行できません。
+
+6.テーブル毎の件数取得
+  各テーブルのデータ件数を取得します。
+  実行結果として、SQLLoader\log\CountRowsByTables\*_CountTable.txtを生成します。
+
+7.DBエクスポート
+  データベースのエクスポートダンプを取得します。
+  ダンプファイルとしてSQLLoader\log\ExportDmp\*.DMPを生成します。
+  ログファイルとしてSQLLoader\log\ExportDmp\*_EXP.LOGを生成します。
+
+8.ソースの取得
+  データベースソース(DDL)を取得します。
+  Table View Index Sequence Procedure Function Package PackageBody Trigger
+  実行結果として、SQLLoader\log\GetDBSource\以下にファイルを生成します。
+
+h.ヘルプ
+  ヘルプを表示します。
+  内容はhelp.txt(このファイル)と同じです。
+
+q.Exit
+  このバッチを終了します。
+
+>.ページ送り
+  次のメニューを参照します
+
+<.ページ送り
+  前のメニューを参照します
+
+以上
+
