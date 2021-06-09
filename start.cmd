@@ -62,11 +62,11 @@ echo   1.Step1(Tebles.txt作成)
 echo   2.Step2(*.CTL作成)　※予め、Step1を実行してください
 echo   3.Step3(*.DAT作成)　※予め、Step1を実行してください
 echo   4.Step4(LOADER実行) ※予め、Step1～3を実行してください
-echo   5.シーケンス合せ
-echo   6.テーブル毎の件数取得
-echo   7.DBエクスポート
-echo   8.DBソース取得 ※時間かかる
-echo   9.
+echo   5.シーケンス取得
+echo   6.シーケンス設定 ※予め、シーケンスを取得してください
+echo   7.テーブル毎の件数取得
+echo   8.DBエクスポート
+echo   9.DBソース取得 ※時間かかる
 echo   0.
 echo   h.ヘルプ
 echo   e.Exit
@@ -80,11 +80,11 @@ if /i "%USER_ANS%" EQU "1" call "%DIR_BIN%\tables\GetUserTables.cmd" && pause
 if /i "%USER_ANS%" EQU "2" call "%DIR_BIN%\loader\GetLoaderCtl.cmd" && pause
 if /i "%USER_ANS%" EQU "3" call "%DIR_BIN%\loader\GetLoaderDat.cmd" && pause
 if /i "%USER_ANS%" EQU "4" call "%DIR_BIN%\loader\StartLoader.cmd" && pause
-if /i "%USER_ANS%" EQU "5" call "%DIR_BIN%\sequences\SetSequence.cmd" && pause
-if /i "%USER_ANS%" EQU "6" call "%DIR_BIN%\tables\CountRowsByTables.cmd" && pause
-if /i "%USER_ANS%" EQU "7" call "%DIR_BIN%\dbsource\ExportDmp.cmd" && pause
-if /i "%USER_ANS%" EQU "8" call "%DIR_BIN%\dbsource\GetDBSource.cmd" && pause
-if /i "%USER_ANS%" EQU "9" echo>NUL
+if /i "%USER_ANS%" EQU "5" call "%DIR_BIN%\sequences\GetSequences.cmd" && pause
+if /i "%USER_ANS%" EQU "6" call "%DIR_BIN%\sequences\SetSequences.cmd" && pause
+if /i "%USER_ANS%" EQU "7" call "%DIR_BIN%\tables\CountRowsByTables.cmd" && pause
+if /i "%USER_ANS%" EQU "8" call "%DIR_BIN%\dbsource\ExportDmp.cmd" && pause
+if /i "%USER_ANS%" EQU "9" call "%DIR_BIN%\dbsource\GetDBSource.cmd" && pause
 if /i "%USER_ANS%" EQU "0" echo>NUL
 if /i "%USER_ANS%" EQU "e" goto normal_end_proc
 if /i "%USER_ANS%" EQU "h" more < "%DIR_HOME%\help.txt" && pause
